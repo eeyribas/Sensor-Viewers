@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>YesNoDialog</class>
+ <widget class="QDialog" name="YesNoDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>440</width>
+    <height>200</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(105, 87, 99);</string>
+  </property>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>400</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(105, 87, 99);
+color: rgb(255, 255, 255);
+border: 0px;
+font: 17px 'Lato-Bold';</string>
+   </property>
+   <property name="text">
+    <string>Are you sure you want to close the program?</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>400</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(105, 87, 99);
+color: rgb(255, 255, 255);
+border: 0px;
+font: 24px 'Lato-Bold';</string>
+   </property>
+   <property name="text">
+    <string>Are you sure?</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>100</y>
+     <width>190</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    border: 3px solid black;
+	border-radius: 5px;
+	color: rgb(0, 0, 0);
+    background-color: rgb(225, 225, 225);
+	text-align: center;
+	font: 32px 'Lato-Bold';
+}
+
+QPushButton::hover {
+	color: rgb(255, 255, 255);	
+    background-color: rgb(38, 201, 84);
+}</string>
+   </property>
+   <property name="text">
+    <string>Yes</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>100</y>
+     <width>190</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    border: 3px solid black;
+	border-radius: 5px;
+	color: rgb(0, 0, 0);
+    background-color: rgb(225, 225, 225);
+	text-align: center;
+	font: 32px 'Lato-Bold';
+}
+
+QPushButton::hover {
+	color: rgb(255, 255, 255);	
+    background-color: rgb(38, 201, 84);
+}</string>
+   </property>
+   <property name="text">
+    <string>No</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

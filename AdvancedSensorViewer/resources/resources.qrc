@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/fonts">
+        <file>fonts/Lato-Black.ttf</file>
+        <file>fonts/Lato-BlackItalic.ttf</file>
+        <file>fonts/Lato-Bold.ttf</file>
+        <file>fonts/Lato-BoldItalic.ttf</file>
+        <file>fonts/Lato-Heavy.ttf</file>
+        <file>fonts/Lato-HeavyItalic.ttf</file>
+        <file>fonts/Lato-Italic.ttf</file>
+        <file>fonts/Lato-Light.ttf</file>
+        <file>fonts/Lato-Medium.ttf</file>
+        <file>fonts/Lato-LightItalic.ttf</file>
+        <file>fonts/Lato-MediumItalic.ttf</file>
+        <file>fonts/Lato-Regular.ttf</file>
+        <file>fonts/Lato-Semibold.ttf</file>
+        <file>fonts/Lato-SemiboldItalic.ttf</file>
+        <file>fonts/Lato-Thin.ttf</file>
+        <file>fonts/Lato-ThinItalic.ttf</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>images/icon.ico</file>
+        <file>images/loading.gif</file>
+        <file>images/sensor_error_img.png</file>
+        <file>images/sensor_ok_img.png</file>
+    </qresource>
+</RCC>
