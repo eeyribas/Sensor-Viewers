@@ -24,13 +24,19 @@ void LanguageDialog::SelectionLangType(QString language)
 {
     if (language == "TR")
     {
-        ui->pushButton->setStyleSheet("QPushButton { border: 0px; image: url(:/images/images/turkey_active.png); }");
-        ui->pushButton_2->setStyleSheet("QPushButton { border: 0px; image: url(:/images/images/USA_passive.png); }"
-                                        "QPushButton:hover{ border: 0px; image: url(:/images/images/USA_active.png); }");
+        ui->pushButton->setStyleSheet("QPushButton { border: 0px; image: "
+                                      "url(:/images/images/turkey_active.png); }");
+        ui->pushButton_2->setStyleSheet("QPushButton { border: 0px; image: "
+                                        "url(:/images/images/USA_passive.png); }"
+                                        "QPushButton:hover{ border: 0px; image: "
+                                        "url(:/images/images/USA_active.png); }");
     } else if (language == "EN") {
-        ui->pushButton->setStyleSheet("QPushButton { border: 0px; image: url(:/images/images/turkey_passive.png); }"
-                                      "QPushButton:hover{ border: 0px; image: url(:/images/images/turkey_active.png); }");
-        ui->pushButton_2->setStyleSheet("QPushButton { border: 0px; image: url(:/images/images/USA_active.png); }");
+        ui->pushButton->setStyleSheet("QPushButton { border: 0px; image: "
+                                      "url(:/images/images/turkey_passive.png); }"
+                                      "QPushButton:hover{ border: 0px; image: "
+                                      "url(:/images/images/turkey_active.png); }");
+        ui->pushButton_2->setStyleSheet("QPushButton { border: 0px; image: "
+                                        "url(:/images/images/USA_active.png); }");
     }
 }
 

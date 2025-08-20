@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <cstdlib>
+#include <ctime>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -115,7 +117,8 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    yes_no_dialog->Initialize("Are you sure?", "Are you sure you want to delete the tests?", "Yes", "No");
+    yes_no_dialog->Initialize("Are you sure?", "Are you sure you want to delete the tests?",
+                              "Yes", "No");
     yes_no_dialog->show();
 }
 
@@ -206,7 +209,8 @@ void MainWindow::Initialize()
     onClearTests();
 }
 
-void MainWindow::ButtonsStatus(bool standard_state, bool comparison_state, bool test_state, bool up_btn_state, bool down_btn_state,
+void MainWindow::ButtonsStatus(bool standard_state, bool comparison_state, bool test_state,
+                               bool up_btn_state, bool down_btn_state,
                                bool clear_btn_state, bool settings_state)
 {
     ui->pushButton->setEnabled(settings_state);
@@ -238,15 +242,20 @@ void MainWindow::ShowComparison(SensorData sensor_data)
     qform_layout->setSpacing(0);
 
     QHBoxLayout *first_hbox_layout = sca_prop.CreateQHBoxLayout("a *", "b *", "c *", "d *", "e *", 98, 38,
-                                                                "QLabel { background-color: rgb(255, 255, 255); color: rgb(84, 40, 72); "
-                                                                "qproperty-alignment: AlignCenter; border: 1px solid white; "
+                                                                "QLabel { background-color: rgb(255, 255, 255); "
+                                                                "color: rgb(84, 40, 72); qproperty-alignment: "
+                                                                "AlignCenter; border: 1px solid white; "
                                                                 "font: 28px 'Lato-Bold'; }");
     qform_layout->addRow(first_hbox_layout);
 
-    QHBoxLayout *second_hbox_layout = sca_prop.CreateQHBoxLayout(QString::number(sensor_data.a_value, 'f', 2), QString::number(sensor_data.b_value, 'f', 2),
-                                                                 QString::number(sensor_data.c_value, 'f', 2), QString::number(sensor_data.d_value, 'f', 2),
-                                                                 QString::number(sensor_data.e_value, 'f', 2), 98, 38, "QLabel { background-color: rgba(255, 255, 255, 0%); "
-                                                                 "color: rgb(255, 255, 255); qproperty-alignment: AlignCenter; border: 1px solid white; "
+    QHBoxLayout *second_hbox_layout = sca_prop.CreateQHBoxLayout(QString::number(sensor_data.a_value, 'f', 2),
+                                                                 QString::number(sensor_data.b_value, 'f', 2),
+                                                                 QString::number(sensor_data.c_value, 'f', 2),
+                                                                 QString::number(sensor_data.d_value, 'f', 2),
+                                                                 QString::number(sensor_data.e_value, 'f', 2),
+                                                                 98, 38, "QLabel { background-color: "
+                                                                 "rgba(255, 255, 255, 0%); color: rgb(255, 255, 255); "
+                                                                 "qproperty-alignment: AlignCenter; border: 1px solid white; "
                                                                  "font: 28px 'Lato-Bold'; }");
     qform_layout->addRow(second_hbox_layout);
 
@@ -265,14 +274,20 @@ void MainWindow::ShowTest(SensorData sensor_data)
     QFormLayout *qform_layout_1 = new QFormLayout();
     qform_layout_1->setContentsMargins(0, 0, 0, 0);
     qform_layout_1->setSpacing(0);
-    QHBoxLayout *first_hbox_layout = sca_prop.CreateQHBoxLayout("a *", "b *", "c *", "d *", "e *", 98, 38, "QLabel { background-color: rgb(255, 255, 255); "
-                                                                "color: rgb(84, 40, 72); qproperty-alignment: AlignCenter; border: 1px solid white; "
+    QHBoxLayout *first_hbox_layout = sca_prop.CreateQHBoxLayout("a *", "b *", "c *", "d *", "e *", 98, 38,
+                                                                "QLabel { background-color: rgb(255, 255, 255); "
+                                                                "color: rgb(84, 40, 72); qproperty-alignment: "
+                                                                "AlignCenter; border: 1px solid white; "
                                                                 "font: 28px 'Lato-Bold'; }");
     qform_layout_1->addRow(first_hbox_layout);
-    QHBoxLayout *second_hbox_layout = sca_prop.CreateQHBoxLayout(QString::number(sensor_data.a_value, 'f', 2), QString::number(sensor_data.b_value, 'f', 2),
-                                                                 QString::number(sensor_data.c_value, 'f', 2), QString::number(sensor_data.d_value, 'f', 2),
-                                                                 QString::number(sensor_data.e_value, 'f', 2), 98, 38, "QLabel { background-color: rgba(255, 255, 255, 0%); "
-                                                                 "color: rgb(255, 255, 255); qproperty-alignment: AlignCenter; border: 1px solid white; "
+    QHBoxLayout *second_hbox_layout = sca_prop.CreateQHBoxLayout(QString::number(sensor_data.a_value, 'f', 2),
+                                                                 QString::number(sensor_data.b_value, 'f', 2),
+                                                                 QString::number(sensor_data.c_value, 'f', 2),
+                                                                 QString::number(sensor_data.d_value, 'f', 2),
+                                                                 QString::number(sensor_data.e_value, 'f', 2),
+                                                                 98, 38, "QLabel { background-color: "
+                                                                 "rgba(255, 255, 255, 0%); color: rgb(255, 255, 255); "
+                                                                 "qproperty-alignment: AlignCenter; border: 1px solid white; "
                                                                  "font: 28px 'Lato-Bold'; }");
     qform_layout_1->addRow(second_hbox_layout);
     widget_1->setLayout(qform_layout_1);
@@ -285,14 +300,20 @@ void MainWindow::ShowTest(SensorData sensor_data)
     QFormLayout *qform_layout_2 = new QFormLayout();
     qform_layout_2->setContentsMargins(0, 0, 0, 0);
     qform_layout_2->setSpacing(0);
-    QHBoxLayout *third_hbox_layout = sca_prop.CreateQHBoxLayout("f *", "g *", "h *", "i *", "j *", 98, 38, "QLabel { background-color: rgb(255, 255, 255); "
-                                                                "color: rgb(84, 40, 72); qproperty-alignment: AlignCenter; border: 1px solid white; "
+    QHBoxLayout *third_hbox_layout = sca_prop.CreateQHBoxLayout("f *", "g *", "h *", "i *", "j *", 98, 38,
+                                                                "QLabel { background-color: rgb(255, 255, 255); "
+                                                                "color: rgb(84, 40, 72); qproperty-alignment: "
+                                                                "AlignCenter; border: 1px solid white; "
                                                                 "font: 28px 'Lato-Bold'; }");
     qform_layout_2->addRow(third_hbox_layout);
-    QHBoxLayout *fourth_hbox_layout = sca_prop.CreateQHBoxLayout(QString::number(sensor_data.f_value, 'f', 2), QString::number(sensor_data.g_value, 'f', 2),
-                                                                 QString::number(sensor_data.h_value, 'f', 2), QString::number(sensor_data.i_value, 'f', 2),
-                                                                 QString::number(sensor_data.j_value, 'f', 2), 98, 38, "QLabel { background-color: rgba(255, 255, 255, 0%); "
-                                                                 "color: rgb(255, 255, 255); qproperty-alignment: AlignCenter; border: 1px solid white; "
+    QHBoxLayout *fourth_hbox_layout = sca_prop.CreateQHBoxLayout(QString::number(sensor_data.f_value, 'f', 2),
+                                                                 QString::number(sensor_data.g_value, 'f', 2),
+                                                                 QString::number(sensor_data.h_value, 'f', 2),
+                                                                 QString::number(sensor_data.i_value, 'f', 2),
+                                                                 QString::number(sensor_data.j_value, 'f', 2),
+                                                                 98, 38, "QLabel { background-color: "
+                                                                 "rgba(255, 255, 255, 0%); color: rgb(255, 255, 255); "
+                                                                 "qproperty-alignment: AlignCenter; border: 1px solid white; "
                                                                  "font: 28px 'Lato-Bold'; }");
     qform_layout_2->addRow(fourth_hbox_layout);
     widget_2->setLayout(qform_layout_2);
@@ -305,14 +326,19 @@ void MainWindow::ShowTest(SensorData sensor_data)
     QFormLayout *qform_layout_3 = new QFormLayout();
     qform_layout_3->setContentsMargins(0, 0, 0, 0);
     qform_layout_3->setSpacing(0);
-    QHBoxLayout *fifth_hbox_layout = sca_prop.CreateQHBoxLayout("k *", "l *", "m *", 98, 38, "QLabel { background-color: rgb(255, 255, 255); "
-                                                                "color: rgb(84, 40, 72); qproperty-alignment: AlignCenter; border: 1px solid white; "
+    QHBoxLayout *fifth_hbox_layout = sca_prop.CreateQHBoxLayout("k *", "l *", "m *", 98, 38, "QLabel { "
+                                                                "background-color: rgb(255, 255, 255); "
+                                                                "color: rgb(84, 40, 72); qproperty-alignment: "
+                                                                "AlignCenter; border: 1px solid white; "
                                                                 "font: 25px 'Lato-Bold'; }");
     qform_layout_3->addRow(fifth_hbox_layout);
-    QHBoxLayout *sixth_hbox_layout = sca_prop.CreateQHBoxLayout(QString::number(sensor_data.k_value, 'f', 2), QString::number(sensor_data.l_value, 'f', 2),
-                                                                QString::number(sensor_data.m_value, 'f', 2), 98, 38, "QLabel { background-color: rgba(255, 255, 255, 0%); "
-                                                                                "color: rgb(255, 255, 255); qproperty-alignment: AlignCenter; border: 1px solid white; "
-                                                                                "font: 28px 'Lato-Bold'; }");
+    QHBoxLayout *sixth_hbox_layout = sca_prop.CreateQHBoxLayout(QString::number(sensor_data.k_value, 'f', 2),
+                                                                QString::number(sensor_data.l_value, 'f', 2),
+                                                                QString::number(sensor_data.m_value, 'f', 2),
+                                                                98, 38, "QLabel { background-color: "
+                                                                "rgba(255, 255, 255, 0%); color: rgb(255, 255, 255); "
+                                                                "qproperty-alignment: AlignCenter; border: "
+                                                                "1px solid white; font: 28px 'Lato-Bold'; }");
     qform_layout_3->addRow(sixth_hbox_layout);
     widget_3->setLayout(qform_layout_3);
     ui->scrollArea_4->setContentsMargins(0, 0, 0, 0);
@@ -324,13 +350,16 @@ void MainWindow::ShowTest(SensorData sensor_data)
     QFormLayout *qform_layout_4 = new QFormLayout();
     qform_layout_4->setContentsMargins(0, 0, 0, 0);
     qform_layout_4->setSpacing(0);
-    QHBoxLayout *seventh_hbox_layout = sca_prop.CreateQHBoxLayout(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss"), 195, 38,
-                                                                  "QLabel { background-color: rgb(255, 255, 255); color: rgb(84, 40, 72); "
+    QHBoxLayout *seventh_hbox_layout = sca_prop.CreateQHBoxLayout(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss"),
+                                                                  195, 38, "QLabel { background-color: "
+                                                                  "rgb(255, 255, 255); color: rgb(84, 40, 72); "
                                                                   "qproperty-alignment: AlignCenter; border: 1px solid white; "
                                                                   "font: 18px 'Lato-Bold'; }");
     qform_layout_4->addRow(seventh_hbox_layout);
-    QHBoxLayout *eigthth_hbox_layout = sca_prop.CreateQHBoxLayout(sensor_data.text, 195, 38, "QLabel { background-color: rgba(255, 255, 255, 0%); "
-                                                                  "color: rgb(255, 255, 255); qproperty-alignment: AlignCenter; border: 1px solid white; "
+    QHBoxLayout *eigthth_hbox_layout = sca_prop.CreateQHBoxLayout(sensor_data.text, 195, 38, "QLabel { "
+                                                                  "background-color: rgba(255, 255, 255, 0%); "
+                                                                  "color: rgb(255, 255, 255); qproperty-alignment: "
+                                                                  "AlignCenter; border: 1px solid white; "
                                                                   "font: 20px 'Lato-Bold'; }");
     qform_layout_4->addRow(eigthth_hbox_layout);
     widget_4->setLayout(qform_layout_4);

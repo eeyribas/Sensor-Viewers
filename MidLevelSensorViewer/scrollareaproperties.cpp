@@ -1,6 +1,7 @@
 #include "scrollareaproperties.h"
 
-QHBoxLayout *ScrollAreaProperties::CreateQHBoxLayout(QString first_text, int t_width, int t_height, QString style)
+QHBoxLayout *ScrollAreaProperties::CreateQHBoxLayout(QString first_text, int t_width,
+                                                     int t_height, QString style)
 {
     QHBoxLayout *hbox_layout = new QHBoxLayout();
     QLabel *label = CreateQLabel(first_text, t_width, t_height, style);
@@ -11,7 +12,9 @@ QHBoxLayout *ScrollAreaProperties::CreateQHBoxLayout(QString first_text, int t_w
     return hbox_layout;
 }
 
-QHBoxLayout *ScrollAreaProperties::CreateQHBoxLayout(QString first_text, QString second_text, QString third_text, int t_width, int t_height, QString style)
+QHBoxLayout *ScrollAreaProperties::CreateQHBoxLayout(QString first_text, QString second_text,
+                                                     QString third_text, int t_width,
+                                                     int t_height, QString style)
 {
     QHBoxLayout *hbox_layout = new QHBoxLayout();
     QLabel *label_1 = CreateQLabel(first_text, t_width, t_height, style);
@@ -27,8 +30,10 @@ QHBoxLayout *ScrollAreaProperties::CreateQHBoxLayout(QString first_text, QString
     return hbox_layout;
 }
 
-QHBoxLayout *ScrollAreaProperties::CreateQHBoxLayout(QString first_text, QString second_text, QString third_text, QString fourth_text, QString fifth_text,
-                                                     int t_width, int t_height, QString style)
+QHBoxLayout *ScrollAreaProperties::CreateQHBoxLayout(QString first_text, QString second_text,
+                                                     QString third_text, QString fourth_text,
+                                                     QString fifth_text, int t_width,
+                                                     int t_height, QString style)
 {
     QHBoxLayout *hbox_layout = new QHBoxLayout();
     QLabel *label_1 = CreateQLabel(first_text, t_width, t_height, style);
@@ -48,7 +53,8 @@ QHBoxLayout *ScrollAreaProperties::CreateQHBoxLayout(QString first_text, QString
     return hbox_layout;
 }
 
-QLabel *ScrollAreaProperties::CreateQLabel(QString text, int t_width, int t_height, QString style)
+QLabel *ScrollAreaProperties::CreateQLabel(QString text, int t_width,
+                                           int t_height, QString style)
 {
     QLabel *label = new QLabel();
     label->setFixedWidth(t_width);

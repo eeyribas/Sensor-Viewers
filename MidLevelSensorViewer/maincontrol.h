@@ -14,6 +14,7 @@ public:
     ~MainControl();
 
     void run();
+
     bool Stop;
 
 signals:

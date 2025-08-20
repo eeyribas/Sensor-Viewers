@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <cstdlib>
+#include <ctime>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -145,11 +147,21 @@ void MainWindow::on_pushButton_4_clicked()
     if (test_sensor_data.size() > 0) {
         test_index = static_cast<uint>(test_sensor_data.size() - 1);
         WriteTestLabels(test_sensor_data.at(test_index), comparison_sensor_data);
-        WriteTestDifferenceLabels(ui->label_27, ui->label_28, ui->label_29, "rgb(127, 127, 127)", "rgb(255, 255, 255)", sensor_data.a_diff_value);
-        WriteTestDifferenceLabels(ui->label_30, ui->label_31, ui->label_32, "rgb(34, 177, 76)", "rgb(255, 0, 0)", sensor_data.b_diff_value);
-        WriteTestDifferenceLabels(ui->label_33, ui->label_34, ui->label_35, "rgb(0, 162, 232)", "rgb(255, 242, 0)", sensor_data.c_diff_value);
-        WriteTestDifferenceLabels(ui->label_36, ui->label_37, ui->label_38, "rgb(255, 255, 255)", "rgb(164, 0, 221)", sensor_data.d_diff_value);
-        WriteTestDifferenceLabels(ui->label_39, ui->label_40, ui->label_41, "rgb(164, 0, 221)", "rgb(127, 127, 127)", sensor_data.e_diff_value);
+        WriteTestDifferenceLabels(ui->label_27, ui->label_28, ui->label_29,
+                                  "rgb(127, 127, 127)", "rgb(255, 255, 255)",
+                                  sensor_data.a_diff_value);
+        WriteTestDifferenceLabels(ui->label_30, ui->label_31, ui->label_32,
+                                  "rgb(34, 177, 76)", "rgb(255, 0, 0)",
+                                  sensor_data.b_diff_value);
+        WriteTestDifferenceLabels(ui->label_33, ui->label_34, ui->label_35,
+                                  "rgb(0, 162, 232)", "rgb(255, 242, 0)",
+                                  sensor_data.c_diff_value);
+        WriteTestDifferenceLabels(ui->label_36, ui->label_37, ui->label_38,
+                                  "rgb(255, 255, 255)", "rgb(164, 0, 221)",
+                                  sensor_data.d_diff_value);
+        WriteTestDifferenceLabels(ui->label_39, ui->label_40, ui->label_41,
+                                  "rgb(164, 0, 221)", "rgb(127, 127, 127)",
+                                  sensor_data.e_diff_value);
     }
 
     ButtonsStatus(true, true, true, true, true, true);
@@ -157,7 +169,8 @@ void MainWindow::on_pushButton_4_clicked()
 
 void MainWindow::on_pushButton_5_clicked()
 {
-    yes_no_dialog->Initialize("Are you sure?", "Are you sure you want to delete the tests?", "Yes", "No");
+    yes_no_dialog->Initialize("Are you sure?", "Are you sure you want to delete the tests?",
+                              "Yes", "No");
     yes_no_dialog->show();
 }
 
@@ -166,11 +179,21 @@ void MainWindow::on_pushButton_6_clicked()
     if (test_sensor_data.size() > 0 && test_index > 0) {
         test_index = test_index - 1;
         WriteTestLabels(test_sensor_data.at(test_index), comparison_sensor_data);
-        WriteTestDifferenceLabels(ui->label_27, ui->label_28, ui->label_29, "rgb(127, 127, 127)", "rgb(255, 255, 255)", test_sensor_data.at(test_index).a_diff_value);
-        WriteTestDifferenceLabels(ui->label_30, ui->label_31, ui->label_32, "rgb(34, 177, 76)", "rgb(255, 0, 0)", test_sensor_data.at(test_index).b_diff_value);
-        WriteTestDifferenceLabels(ui->label_33, ui->label_34, ui->label_35, "rgb(0, 162, 232)", "rgb(255, 242, 0)", test_sensor_data.at(test_index).c_diff_value);
-        WriteTestDifferenceLabels(ui->label_36, ui->label_37, ui->label_38, "rgb(255, 255, 255)", "rgb(164, 0, 221)", test_sensor_data.at(test_index).d_diff_value);
-        WriteTestDifferenceLabels(ui->label_39, ui->label_40, ui->label_41, "rgb(164, 0, 221)", "rgb(127, 127, 127)", test_sensor_data.at(test_index).e_diff_value);
+        WriteTestDifferenceLabels(ui->label_27, ui->label_28, ui->label_29,
+                                  "rgb(127, 127, 127)", "rgb(255, 255, 255)",
+                                  test_sensor_data.at(test_index).a_diff_value);
+        WriteTestDifferenceLabels(ui->label_30, ui->label_31, ui->label_32,
+                                  "rgb(34, 177, 76)", "rgb(255, 0, 0)",
+                                  test_sensor_data.at(test_index).b_diff_value);
+        WriteTestDifferenceLabels(ui->label_33, ui->label_34, ui->label_35,
+                                  "rgb(0, 162, 232)", "rgb(255, 242, 0)",
+                                  test_sensor_data.at(test_index).c_diff_value);
+        WriteTestDifferenceLabels(ui->label_36, ui->label_37, ui->label_38,
+                                  "rgb(255, 255, 255)", "rgb(164, 0, 221)",
+                                  test_sensor_data.at(test_index).d_diff_value);
+        WriteTestDifferenceLabels(ui->label_39, ui->label_40, ui->label_41,
+                                  "rgb(164, 0, 221)", "rgb(127, 127, 127)",
+                                  test_sensor_data.at(test_index).e_diff_value);
     }
 }
 
@@ -179,11 +202,21 @@ void MainWindow::on_pushButton_7_clicked()
     if (test_sensor_data.size() > 0 && test_index < test_sensor_data.size() - 1) {
         test_index = test_index + 1;
         WriteTestLabels(test_sensor_data.at(test_index), comparison_sensor_data);
-        WriteTestDifferenceLabels(ui->label_27, ui->label_28, ui->label_29, "rgb(127, 127, 127)", "rgb(255, 255, 255)", test_sensor_data.at(test_index).a_diff_value);
-        WriteTestDifferenceLabels(ui->label_30, ui->label_31, ui->label_32, "rgb(34, 177, 76)", "rgb(255, 0, 0)", test_sensor_data.at(test_index).b_diff_value);
-        WriteTestDifferenceLabels(ui->label_33, ui->label_34, ui->label_35, "rgb(0, 162, 232)", "rgb(255, 242, 0)", test_sensor_data.at(test_index).c_diff_value);
-        WriteTestDifferenceLabels(ui->label_36, ui->label_37, ui->label_38, "rgb(255, 255, 255)", "rgb(164, 0, 221)", test_sensor_data.at(test_index).d_diff_value);
-        WriteTestDifferenceLabels(ui->label_39, ui->label_40, ui->label_41, "rgb(164, 0, 221)", "rgb(127, 127, 127)", test_sensor_data.at(test_index).e_diff_value);
+        WriteTestDifferenceLabels(ui->label_27, ui->label_28, ui->label_29,
+                                  "rgb(127, 127, 127)", "rgb(255, 255, 255)",
+                                  test_sensor_data.at(test_index).a_diff_value);
+        WriteTestDifferenceLabels(ui->label_30, ui->label_31, ui->label_32,
+                                  "rgb(34, 177, 76)", "rgb(255, 0, 0)",
+                                  test_sensor_data.at(test_index).b_diff_value);
+        WriteTestDifferenceLabels(ui->label_33, ui->label_34, ui->label_35,
+                                  "rgb(0, 162, 232)", "rgb(255, 242, 0)",
+                                  test_sensor_data.at(test_index).c_diff_value);
+        WriteTestDifferenceLabels(ui->label_36, ui->label_37, ui->label_38,
+                                  "rgb(255, 255, 255)", "rgb(164, 0, 221)",
+                                  test_sensor_data.at(test_index).d_diff_value);
+        WriteTestDifferenceLabels(ui->label_39, ui->label_40, ui->label_41,
+                                  "rgb(164, 0, 221)", "rgb(127, 127, 127)",
+                                  test_sensor_data.at(test_index).e_diff_value);
     }
 }
 
@@ -248,11 +281,14 @@ void MainWindow::WriteTestLabels(SensorData test_data, SensorData comparison_dat
     ui->label_25->setText(QString::number(test_data.d_value, 'f', 2));
     ui->label_26->setText(QString::number(test_data.e_value, 'f', 2));
 
-    double result = (test_data.a_value - comparison_data.a_value) + (test_data.b_value - comparison_data.b_value) +
-                    (test_data.c_value - comparison_data.c_value) + (test_data.d_value - comparison_data.d_value) +
+    double result = (test_data.a_value - comparison_data.a_value) +
+                    (test_data.b_value - comparison_data.b_value) +
+                    (test_data.c_value - comparison_data.c_value) +
+                    (test_data.d_value - comparison_data.d_value) +
                     (test_data.e_value - comparison_data.e_value);
     ui->label_8->setText(QString::number(result, 'f', 2));
-    ui->label_42->setText(QString::number(test_index + 1) + "/" + QString::number(test_sensor_data.size()));
+    ui->label_42->setText(QString::number(test_index + 1) + "/" +
+                          QString::number(test_sensor_data.size()));
     ui->label_43->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss"));
 }
 
@@ -269,23 +305,29 @@ void MainWindow::EmptyTestLabels()
     ui->label_43->setText("-");
 }
 
-void MainWindow::WriteTestDifferenceLabels(QLabel *label_1, QLabel *label_2, QLabel *label_3, QString low_color,
-                                           QString high_color, double diff_value)
+void MainWindow::WriteTestDifferenceLabels(QLabel *label_1, QLabel *label_2, QLabel *label_3,
+                                           QString low_color, QString high_color, double diff_value)
 {
     if (diff_value > 0) {
         label_1->setText(QString::number(diff_value, 'f', 2));
-        label_1->setStyleSheet("background-color: rgb(100, 100, 100); image: none; font: 28px 'Lato-Bold'; color: " + high_color + ";");
+        label_1->setStyleSheet("background-color: rgb(100, 100, 100); image: none; "
+                               "font: 28px 'Lato-Bold'; color: " + high_color + ";");
         label_2->setText("▲");
-        label_2->setStyleSheet("background-color: rgb(100, 100, 100); image: none; font: 25px 'Lato-Bold'; color: " + high_color + ";");
+        label_2->setStyleSheet("background-color: rgb(100, 100, 100); image: none; "
+                               "font: 25px 'Lato-Bold'; color: " + high_color + ";");
         label_3->setText("▀");
-        label_3->setStyleSheet("background-color: rgb(100, 100, 100); image: none; font: 25px 'Lato-Bold'; color: " + low_color + ";");
+        label_3->setStyleSheet("background-color: rgb(100, 100, 100); image: none; "
+                               "font: 25px 'Lato-Bold'; color: " + low_color + ";");
     } else {
         label_1->setText(QString::number(diff_value, 'f', 2));
-        label_1->setStyleSheet("background-color: rgb(100, 100, 100); image: none; font: 28px 'Lato-Bold'; color: " + low_color + ";");
+        label_1->setStyleSheet("background-color: rgb(100, 100, 100); image: none; "
+                               "font: 28px 'Lato-Bold'; color: " + low_color + ";");
         label_2->setText("▄");
-        label_2->setStyleSheet("background-color: rgb(100, 100, 100); image: none; font: 25px 'Lato-Bold'; color: " + high_color + ";");
+        label_2->setStyleSheet("background-color: rgb(100, 100, 100); image: none; "
+                               "font: 25px 'Lato-Bold'; color: " + high_color + ";");
         label_3->setText("▼");
-        label_3->setStyleSheet("background-color: rgb(100, 100, 100); image: none; font: 25px 'Lato-Bold'; color: " + low_color + ";");
+        label_3->setStyleSheet("background-color: rgb(100, 100, 100); image: none; "
+                               "font: 25px 'Lato-Bold'; color: " + low_color + ";");
     }
 }
 
@@ -293,13 +335,15 @@ void MainWindow::EmptyTestDifferenceLabels(QLabel *label_1, QLabel *label_2, QLa
 {
     label_1->setText("-");
     label_2->setText("-");
-    label_2->setStyleSheet("background-color: rgb(100, 100, 100); image: none; font: 25px 'Lato-Bold'; color: rgb(164, 0, 221);");
+    label_2->setStyleSheet("background-color: rgb(100, 100, 100); image: none; "
+                           "font: 25px 'Lato-Bold'; color: rgb(164, 0, 221);");
     label_3->setText("-");
-    label_3->setStyleSheet("background-color: rgb(100, 100, 100); image: none; font: 25px 'Lato-Bold'; color: rgb(164, 0, 221);");
+    label_3->setStyleSheet("background-color: rgb(100, 100, 100); image: none; "
+                           "font: 25px 'Lato-Bold'; color: rgb(164, 0, 221);");
 }
 
-void MainWindow::ButtonsStatus(bool standard_state, bool comparison_state, bool test_state, bool up_btn_state,
-                               bool down_btn_state,  bool clear_btn_state)
+void MainWindow::ButtonsStatus(bool standard_state, bool comparison_state, bool test_state,
+                               bool up_btn_state, bool down_btn_state,  bool clear_btn_state)
 {
     ui->pushButton_2->setEnabled(standard_state);
     ui->pushButton_3->setEnabled(comparison_state);

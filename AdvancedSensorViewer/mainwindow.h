@@ -6,8 +6,6 @@
 #include <QDateTime>
 #include <QLabel>
 #include <vector>
-#include <cstdlib>
-#include <ctime>
 #include "maincontrol.h"
 #include "infodialog.h"
 #include "loadingdialog.h"
@@ -46,11 +44,11 @@ private:
     void EmptyComparisonLabels();
     void WriteTestLabels(SensorData test_data, SensorData comparison_data);
     void EmptyTestLabels();
-    void WriteTestDifferenceLabels(QLabel *label_1, QLabel *label_2, QLabel *label_3, QString low_color,
-                                   QString high_color, double diff_value);
+    void WriteTestDifferenceLabels(QLabel *label_1, QLabel *label_2, QLabel *label_3,
+                                   QString low_color, QString high_color, double diff_value);
     void EmptyTestDifferenceLabels(QLabel *label_1, QLabel *label_2, QLabel *label_3);
-    void ButtonsStatus(bool standard_state, bool comparison_state, bool test_state, bool up_btn_state,
-                       bool down_btn_state,  bool clear_btn_state);
+    void ButtonsStatus(bool standard_state, bool comparison_state, bool test_state,
+                       bool up_btn_state, bool down_btn_state,  bool clear_btn_state);
     double RandomNumber();
 
     Ui::MainWindow *ui;

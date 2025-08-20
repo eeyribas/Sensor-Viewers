@@ -18,7 +18,8 @@ YesNoDialog::~YesNoDialog()
     delete ui;
 }
 
-void YesNoDialog::Initialize(std::string text_1, std::string text_2, std::string yes_btn_text, std::string no_btn_text)
+void YesNoDialog::Initialize(std::string text_1, std::string text_2,
+                             std::string yes_btn_text, std::string no_btn_text)
 {
     ui->label->setText(QString::fromStdString(text_1));
     ui->label_2->setText(QString::fromStdString(text_2));

@@ -1,14 +1,14 @@
 # Sensor-Viewers
-Sensor Viewer applications where measurements taken from the sensor or sensors are displayed. 
-In Sensor Viewer applications, there are features for displaying and viewing measurement data taken from the sensor. 
-The Sensor Viewer applications include two versions: mid-level and advanced. They are classified according to their interface designs. 
-Images related to Sensor Viewer applications can be viewed from the 'Outputs' folder. The application is coded in C++ programming language. 
-The Qt Widget framework is used as the interface.
+Sensor Viewer applications where measurements taken from one or more sensors are displayed.
+These applications include functionalities such as visualizing the data received from the sensors and performing various calculations based on that data.
+Sensor Viewer applications are offered in two different versions—mid-level and advanced—based on their interface designs.
 
-C++ IDE: Qt
+Programming Language: C++ Programming Language
 
-C++ Interface: Qt Widget
+Framework: Qt6 (Version: Qt 6.3.2)
 
-C++ Framework: Qt-5 Framework
+IDE: Qt Creator 8.0.1
 
-Interface Images: "Outputs" Folder
+Interface Tools: Qt Widget
+
+Interface Images: The “outputs” folder inside the applications contains images related to the user interface.

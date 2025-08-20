@@ -4,8 +4,6 @@
 #include <QMainWindow>
 #include <QFontDatabase>
 #include <vector>
-#include <cstdlib>
-#include <ctime>
 #include "maincontrol.h"
 #include "advsettingsdialog.h"
 #include "infodialog.h"
@@ -42,7 +40,8 @@ private slots:
 
 private:
     void Initialize();
-    void ButtonsStatus(bool standard_state, bool comparison_state, bool test_state, bool up_btn_state, bool down_btn_state,
+    void ButtonsStatus(bool standard_state, bool comparison_state, bool test_state,
+                       bool up_btn_state, bool down_btn_state,
                        bool clear_btn_state, bool settings_state);
     void SetDescriptionText(QString text);
     void ShowComparison(SensorData sensor_data);

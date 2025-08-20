@@ -16,7 +16,8 @@ public:
     explicit YesNoDialog(QWidget *parent = nullptr);
     ~YesNoDialog();
 
-    void Initialize(std::string text_1, std::string text_2, std::string yes_btn_text, std::string no_btn_text);
+    void Initialize(std::string text_1, std::string text_2,
+                    std::string yes_btn_text, std::string no_btn_text);
 
 signals:
     void atYesButton();
